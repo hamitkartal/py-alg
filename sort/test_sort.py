@@ -34,7 +34,7 @@ def test_intertwine():
 
 
 def test_merge_sort():
-    pass
+
     # array with multiple elements in random order
     assert merge_sort([4, 1, 7, 3, 8, 2, 5, 6]) == [1, 2, 3, 4, 5, 6, 7, 8]
 
