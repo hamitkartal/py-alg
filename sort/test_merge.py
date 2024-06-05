@@ -61,4 +61,3 @@ def test_merge_sort():
 
     # array with elements in an alternating high-low pattern
     assert merge_sort([5, 1, 6, 2, 7, 3, 8, 4]) == [1, 2, 3, 4, 5, 6, 7, 8]
-
