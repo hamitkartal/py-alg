@@ -1,6 +1,7 @@
 from merge import *
 from insertion import insertion_sort
 from selection import selection_sort
+from quick import quick_sort
 
 def test_intertwine():
     
@@ -34,7 +35,6 @@ def test_intertwine():
     # arrays with a single element each
     assert intertwine([1], [2]) == [1, 2]
 
-
 def test_merge_sort():
 
     # array with multiple elements in random order
@@ -63,7 +63,6 @@ def test_merge_sort():
 
     # array with elements in an alternating high-low pattern
     assert merge_sort([5, 1, 6, 2, 7, 3, 8, 4]) == [1, 2, 3, 4, 5, 6, 7, 8]
-
 
 def test_insertion_sort():
 
@@ -122,3 +121,32 @@ def test_selection_sort():
 
     # array with elements in an alternating high-low pattern
     assert selection_sort([5, 1, 6, 2, 7, 3, 8, 4]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+def test_quick_sort():
+
+    # array with multiple elements in random order
+    assert quick_sort([4, 1, 7, 3, 8, 2, 5, 6]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+    # already sorted array
+    assert quick_sort([1, 2, 3, 4, 5, 6, 7, 8]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+    # reverse-sorted array
+    assert quick_sort([8, 7, 6, 5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+    # array with duplicate elements
+    assert quick_sort([3, 1, 2, 3, 1, 2, 3]) == [1, 1, 2, 2, 3, 3, 3]
+
+    # array with a single element
+    assert quick_sort([5]) == [5]
+
+    # empty array
+    assert quick_sort([]) == []
+
+    # array with negative and positive numbers
+    assert quick_sort([-1, 2, -3, 4, -5, 6, -7, 8]) == [-7, -5, -3, -1, 2, 4, 6, 8]
+
+    # array with all identical elements
+    assert quick_sort([2,2,2,2,2]) == [2,2,2,2,2]
+
+    # array with elements in an alternating high-low pattern
+    assert quick_sort([5, 1, 6, 2, 7, 3, 8, 4]) == [1, 2, 3, 4, 5, 6, 7, 8]
