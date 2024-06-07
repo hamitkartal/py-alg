@@ -3,6 +3,7 @@ from insertion import insertion_sort
 from selection import selection_sort
 from quick import quick_sort
 from counting import counting_sort
+from bubble import bubble_sort
 
 def test_intertwine():
     
@@ -180,3 +181,32 @@ def test_counting_sort():
 
     # array with elements in an alternating high-low pattern
     assert counting_sort([5, 1, 6, 2, 7, 3, 8, 4]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+def test_bubble_sort():
+
+    # array with multiple elements in random order
+    assert bubble_sort([4, 1, 7, 3, 8, 2, 5, 6]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+    # already sorted array
+    assert bubble_sort([1, 2, 3, 4, 5, 6, 7, 8]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+    # reverse-sorted array
+    assert bubble_sort([8, 7, 6, 5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5, 6, 7, 8]
+
+    # array with duplicate elements
+    assert bubble_sort([3, 1, 2, 3, 1, 2, 3]) == [1, 1, 2, 2, 3, 3, 3]
+
+    # array with a single element
+    assert bubble_sort([5]) == [5]
+
+    # empty array
+    assert bubble_sort([]) == []
+
+    # array with negative and positive numbers
+    assert bubble_sort([-1, 2, -3, 4, -5, 6, -7, 8]) == [-7, -5, -3, -1, 2, 4, 6, 8]
+
+    # array with all identical elements
+    assert bubble_sort([2,2,2,2,2]) == [2,2,2,2,2]
+
+    # array with elements in an alternating high-low pattern
+    assert bubble_sort([5, 1, 6, 2, 7, 3, 8, 4]) == [1, 2, 3, 4, 5, 6, 7, 8]
